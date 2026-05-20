@@ -1,0 +1,17 @@
+node_modules/
+
+.next/
+
+coverage/
+
+dist/
+
+.DS_Store
+
+__MACOSX/
+
+.vercel/
+
+tmp/
+
+*.log
