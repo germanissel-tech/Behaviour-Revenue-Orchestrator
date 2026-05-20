@@ -1,0 +1,33 @@
+# Architecture
+
+DECIDES:
+session-orchestrator
+
+INTENT:
+unified-intent-engine
+
+FATIGUE:
+cooldown-fatigue-engine
+
+RANKING:
+message-ranking-engine
+
+LIFECYCLE:
+intervention-lifecycle-manager
+
+VISIBILITY:
+message-visibility-controller
+
+STATE:
+behavioral-state-store
+
+PIPELINE:
+
+signal
+→ intent
+→ product intelligence
+→ intervention policy
+→ fatigue
+→ ranking
+→ lifecycle
+→ visibility
