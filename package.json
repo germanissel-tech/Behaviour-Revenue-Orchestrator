@@ -1,0 +1,44 @@
+{
+  "name": "ope-v2",
+  "version": "2.0.0",
+  "description": "On-site Persuasion / Experimentation Engine",
+  "private": true,
+  "scripts": {
+    "test": "jest tests/ --forceExit",
+    "test:coverage": "jest tests/ --coverage --coverageDirectory=coverage --forceExit",
+    "test:watch": "jest tests/ --watch",
+    "check:circular": "madge --circular lib/session-orchestrator.js",
+    "check:circular:note": "echo NOTE: index.js->session-simulator-runner is a madge false-positive (dynamic require inside _loadModules)"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/lib/store/",
+      "backup\\.js$",
+      "simulator"
+    ],
+    "collectCoverageFrom": [
+      "lib/session-orchestrator.js",
+      "lib/intervention-outcome-tracker.js",
+      "lib/intervention-learning-store.js",
+      "lib/cooldown-fatigue-engine.js",
+      "lib/behavioral-state-store.js",
+      "lib/experiment-engine.js",
+      "lib/statistical-validity-engine.js",
+      "lib/real-time-orchestrator.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 40
+      }
+    }
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "madge": "^8.0.0"
+  }
+}
